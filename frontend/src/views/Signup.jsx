@@ -12,7 +12,6 @@ export default function Signup(){
   const [errors, setErrors] = useState(null)
   const {setUser, setToken} = useStateContext();
   const onSubmit = (ev) => {
-
     ev.preventDefault()
     const payload = {
       name:nameRef.current.value,

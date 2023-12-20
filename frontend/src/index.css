@@ -197,6 +197,14 @@ table > tbody > tr > td {
     transition: all 0.2s;
 }
 
+.centered-td {
+    text-align: center;
+}
+
+.loader-container {
+    display: inline-block;
+}
+
 #defaultLayout aside > a:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }

@@ -6,6 +6,9 @@ import NotFound from "./views/NotFound.jsx";
 import DefaultLayout from "./components/DefaultLayout.jsx";
 import GuestLayout from "./components/GuestLayout.jsx";
 import Dashboard from "./views/Dashboard.jsx";
+import UserForm from "./views/UserForm.jsx";
+import Vocabulary from "./views/Vocabulary.jsx";
+import CategoryForm from "./views/CategoryForm.jsx";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +27,27 @@ const router = createBrowserRouter([
                 path: '/users',
                 element: <Users />
             },
+            {
+                path: '/users/new',
+                element: <UserForm key="userCreate" />
+            },
+            {
+                path: '/users/:id',
+                element: <UserForm key="UserUpdate" />
+            },
+            {
+                path: '/vocabulary',
+                element: <Vocabulary />
+            },
+            {
+                path: '/category/new',
+                element: <CategoryForm key="VocabularyCreate" />
+            },
+            {
+                path: '/category/:id',
+                element: <CategoryForm key="VocabularyUpdate" />
+            },
+
         ]
     },
     {
