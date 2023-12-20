@@ -11,9 +11,14 @@ export default function CategoryForm(){
   const [title, setTitle] = useState({
     id: null,
     title: '',
+    description: '',
+    difficulty: '',
+    status: '',
   })
 
   const titleRef = useRef();
+  const difficultyRef = useRef();
+  const statusRef = useRef();
 
   if(id){
     useEffect(() => {
@@ -37,6 +42,7 @@ export default function CategoryForm(){
     if(category){
       axiosClient.put(`/categories/${id}`,title)
           .then(response => {
+            console.log(title);
             navigate("/vocabulary");
           })
           .catch(error => {
@@ -59,6 +65,9 @@ export default function CategoryForm(){
         {!category && <h1>New User</h1>}
         <form onSubmit={onSubmit}>
           <input value={title.title} placeholder="Name" ref={titleRef} onChange={ev => setTitle({...title, title: ev.target.value })} />
+          <input value={title.description} placeholder="Description" ref={statusRef} onChange={ev => setTitle({...title, description: ev.target.value })} />
+          <input value={title.difficulty} placeholder="Difficulty" ref={difficultyRef} onChange={ev => setTitle({...title, difficulty: ev.target.value })} />
+          <input value={title.status} placeholder="Status" ref={statusRef} onChange={ev => setTitle({...title, status: ev.target.value })} />
           <button className="btn">Save</button>
         </form>
       </>
